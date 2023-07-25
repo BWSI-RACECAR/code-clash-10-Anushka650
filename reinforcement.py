@@ -52,8 +52,8 @@ class Solution:
 
         for i in range(num_players+1):
             for j in range(num_actions):
-                dict[ctr] = i,j
-                dict[i,j] = ctr
+                dict[ctr] = j,i
+                dict[j,i] = ctr
                 ctr += 1
 
 
