@@ -50,13 +50,16 @@ class Solution:
         str = ""
         dict = {}
 
-        for i in range(num_players+1):
-            for j in range(num_actions):
-                dict[ctr] = j,i
-                dict[j,i] = ctr
-                ctr += 1
-
-
+        # for i in range(num_actions+1):
+        #     for j in range(num_players):
+        #         dict[ctr] = j,i
+        #         dict[j,i] = ctr
+        #         ctr += 1
+        for i in range(num_actions**num_players):
+            dict[i ] = ()
+            for j in range(num_players):
+                dict[i] += (i // (num_actions**j) % num_actions,)
+            dict[dict[i]] = i
 
         return dict
             #type num: two integer values
