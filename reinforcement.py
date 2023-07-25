@@ -49,11 +49,11 @@ class Solution:
         ctr = 0
         str = ""
         dict = {}
-        
+
         for i in range(num_players+1):
             for j in range(num_actions):
-                #print(ctr, ": (", i, ",", j, ")")
                 dict[ctr] = i,j
+                dict[i,j] = ctr
                 ctr += 1
 
 
